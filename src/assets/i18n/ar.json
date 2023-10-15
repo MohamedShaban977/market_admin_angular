@@ -1,0 +1,34 @@
+{
+    "dir": "rtl",
+    "header": {
+        "market": "ماركت ادمن",
+        "home": "الرئيسية",
+        "products": "المنتجات",
+        "carts": "السلة",
+        "language": "EN"
+    },
+    "products": {
+        "details": {
+            "description": "التفاصيل"
+        }
+    },
+    "cart": {
+        "shopping_cart": "عربة التسوق",
+        "You_have": "لديك",
+        "item_in_your_cart": "عنصر في عربة التسوق الخاصة بك",
+        "clear_shopping_cart": "تفريغ عربة التسوق",
+        "name": "الاسم",
+        "price": "السعر",
+        "quantity": "الكمية",
+        "total": "المجموع",
+        "delete": "حذف",
+        "date": "التاريخ",
+        "view_details": "عرض التفاصيل",
+        "start_date": "تاريخ البدء",
+        "end_date": "تاريخ الانتهاء",
+        "apply": "بحث",
+        "clear": "مسح",
+        "order_now": "اطلب الان",
+        "order_details": "تفاصيل الطلب"
+    }
+}

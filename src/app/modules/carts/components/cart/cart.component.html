@@ -1,0 +1,105 @@
+<!-- <div class="alert mt-3 alert-success" *ngIf="success" role="alert"><strong>Well done!</strong> Your Order is
+    Successfully
+    Send</div> -->
+
+<div class="cartBox">
+
+    <form [formGroup]="formGroup" class=" mb-3 mt-3">
+        <div class="row">
+            <div class="col-md-3">
+                <label for="">{{'cart.start_date'|translate}}</label>
+                <input type="date" formControlName="startdate" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <label for="">{{'cart.end_date'|translate}}</label>
+                <input type="date" formControlName="enddate" class="form-control">
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <button class="btn btn-success" (click)="applyFilter()">{{'cart.apply'|translate}}</button>
+                <button class="btn btn-outline-dark mx-3" (click)="clearFilter()">{{'cart.clear'|translate}}</button>
+            </div>
+        </div>
+    </form>
+
+
+    <table class="table table-light ">
+        <thead>
+            <tr class="text-center">
+                <th colspan="2"></th>
+                <th>{{'cart.date' |translate}}</th>
+                <th> {{'cart.quantity' |translate}}</th>
+                <th colspan="2"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of carts; let i=index ">
+                <td colspan="2"></td>
+
+                <td>{{item.date |date}}</td>
+                <td>{{item.products.length}}</td>
+                <td colspan="2">
+                    <button class="btn btn-primary mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        (click)="viewItem(i)">{{'cart.view_details' |translate}}</button>
+                    <button class="btn btn-danger" (click)="deleteCart(item.id)">{{'cart.delete' |translate}}</button>
+                </td>
+
+            </tr>
+            <tr *ngIf="carts?.length == 0">
+                <td colspan="6"> No Data</td>
+
+            </tr>
+
+        </tbody>
+        <!-- <tfoot>
+            <tr>
+                <th colspan="4">{{'cart.total' |translate}} : {{total|currency: ' L.E ' }}</th>
+                <th colspan="2"><button class="btn btn-success"
+                        [disabled]="carts.length == 0">{{'cart.order_now'|translate}}</button></th>
+            </tr>
+        </tfoot> -->
+    </table>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 85vw !important;">
+            <div class="modal-content ">
+                <div class="modal-header  ">
+                    <h5 class="modal-title w-100" id="exampleModalLabel">{{'cart.order_details'|translate}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-center">
+                                <th></th>
+                                <th>{{'cart.name'|translate}}</th>
+                                <!-- <th></th> -->
+                                <th>{{'cart.price'|translate}}</th>
+                                <th>{{'cart.quantity'|translate}}</th>
+                                <th>{{'cart.total'|translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let item of products; let i = index">
+                            <tr>
+                                <!-- <td></td> -->
+                                <td><img [src]="item.image" alt="test"></td>
+                                <td>{{item.title}}</td>
+                                <td>{{item.price}}</td>
+                                <td>{{item.quantity}}</td>
+                                <td>{{item.quantity * item.price}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
