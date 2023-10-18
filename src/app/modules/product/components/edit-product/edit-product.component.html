@@ -84,7 +84,7 @@
                 <div class="form-group mb-4">
                     <label class="mb-2 text-primary fw-bold" for="exampleFormControlFile1">Upload Image</label><br>
                     <input type="file" accept="image/*" formControlName="image" class="form-control-file" id="imgUpload"
-                        (change)="showPreview($event)" hidden />
+                        hidden />
 
 
 
@@ -99,8 +99,8 @@
                 <app-spinner *ngIf="isLoadingg"> </app-spinner>
                 <div class="imagePreview"><!--  *ngIf="(imageURL && imageURL !== '')&&!isLoadingg" -->
                     <img class="imagePreview rounded-circle col-1 " style="height:100px ; width:100px"
-                        [src]="(imageURL||'../../../../../assets/images/profile-avatar.png')" [alt]="">
-                    <label for="imgUpload" class="imgUpload bg-primary text-white">
+                        [src]="(getControlByName('image')?.value||'../../../../../assets/images/profile-avatar.png')">
+                    <label for="imgUpload" class="imgUpload bg-primary text-white rounded-circle p-2">
                         <i class="fas fa-camera"></i>
                     </label>
                 </div>

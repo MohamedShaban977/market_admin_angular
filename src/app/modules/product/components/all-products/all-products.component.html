@@ -1,6 +1,7 @@
 <div class="cartBox">
     <!-- <h1 class="text-danger">{{'cart.shopping_cart' | translate }}</h1> -->
     <button type="button" class="btn btn-primary mt-3 mb-3" routerLink="/addProduct">Add Product</button>
+    <button type="button" class="btn btn-primary mt-3 mb-3" (click)="downloadFile()">download</button>
 
 
     <table class="table table-light ">
@@ -12,6 +13,8 @@
                 <th class="w-25"> {{'cart.category' |translate}}</th>
 
                 <th></th>
+                <th colspan="3"> </th>
+
             </tr>
         </thead>
         <tbody>
@@ -20,11 +23,15 @@
                 <td class="text-start">{{item.title}}</td>
                 <td>{{item.price}} L.E</td>
                 <td>{{item.category}} </td>
-
                 <td>
                     <button class="btn btn-danger" (click)="deleteProduct(i)">{{'cart.delete' |translate}}</button>
                 </td>
+                <td colspan="3" class="col-2">
+                    <button type="button" class="btn btn-primary " routerLink="/editProduct//{{item.id}}">Edit
+                        Product</button>
+                </td>
             </tr>
+
             <tr *ngIf="products.length == 0">
                 <td colspan="6"> No Data</td>
 

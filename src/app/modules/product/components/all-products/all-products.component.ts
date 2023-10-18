@@ -28,6 +28,19 @@ export class AllProductsComponent implements OnInit {
     });
   }
 
+
+
   deleteProduct(index: number) { }
+
+  contentType = 'image/png';
+  base64Data = "iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+
+  downloadFile() {
+    const linkSource = `data:${this.contentType};base64,${this.base64Data}`;
+    const downloadLink = document.createElement("a");
+    downloadLink.href = linkSource;
+    downloadLink.download = 'fileName';
+    downloadLink.click();
+  }
 
 }

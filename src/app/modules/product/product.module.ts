@@ -5,13 +5,15 @@ import { SharedModule } from '../shared/shared.module';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { RouterModule } from '@angular/router';
 import { ProductRoutingModule } from './product-routing.module';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 
 
 @NgModule({
   declarations: [
     AllProductsComponent,
-    AddProductComponent
+    AddProductComponent,
+    EditProductComponent
   ],
   imports: [
     ProductRoutingModule,

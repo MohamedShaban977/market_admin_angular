@@ -1,0 +1,22 @@
+// .upload-img {
+    // position: relative;
+    .imagePreview {
+        position: relative;
+        width: fit-content;
+        label.imgUpload {
+            position: absolute;
+            bottom: 0rem;
+            right: 1rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            // color: white;
+            // i{
+            // }
+        }
+    }
+// }
